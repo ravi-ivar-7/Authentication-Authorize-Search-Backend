@@ -3,11 +3,11 @@ const express = require('express');
 const app = express()
 
 const routes = require('./routes/route');
+
 const { connect_M_DB } = require('./databases/db')
+// connect_M_DB(process.env.MONGOOSE_URL);
 
 const port = process.env.API_PORT;
-
-connect_M_DB(process.env.MONGOOSE_URL);
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
